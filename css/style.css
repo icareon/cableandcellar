@@ -395,6 +395,13 @@ h4 {
   line-height: 1.8;
 }
 
+.section-body {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.9;
+  max-width: 480px;
+}
+
 /* ============================================
    Hero
    ============================================ */
@@ -527,6 +534,136 @@ h4 {
 }
 
 /* ============================================
+   Value Proposition (3-Column)
+   ============================================ */
+
+.value-props {
+  padding: var(--space-3xl) 0;
+  background: var(--color-bg);
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+.value-col {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.value-col h3 {
+  margin-bottom: var(--space-sm);
+  font-weight: 400;
+}
+
+.value-col p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Lifestyle Section (Full-Width Image + Caption)
+   ============================================ */
+
+.lifestyle-section {
+  position: relative;
+  background: var(--color-bg);
+  padding: 0 0 var(--space-3xl);
+}
+
+.lifestyle-image-wrap {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.lifestyle-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.03) contrast(1.02);
+  transition: transform 1.5s var(--ease-smooth);
+}
+
+.lifestyle-image-wrap:hover .lifestyle-img {
+  transform: scale(1.02);
+}
+
+.lifestyle-caption {
+  padding: var(--space-xl) 0 0;
+  max-width: 700px;
+}
+
+.lifestyle-caption .section-body {
+  max-width: 600px;
+}
+
+/* ============================================
+   Cinematic Section (Full-Width Image + Caption)
+   ============================================ */
+
+.cinematic-section {
+  position: relative;
+  background: var(--color-bg);
+  padding: 0 0 var(--space-3xl);
+}
+
+.cinematic-section--dark {
+  background: var(--color-bg-dark);
+  padding: var(--space-3xl) 0;
+}
+
+.cinematic-image-wrap {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.cinematic-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.03) contrast(1.02);
+  transition: transform 1.5s var(--ease-smooth);
+}
+
+.cinematic-image-wrap:hover .cinematic-img {
+  transform: scale(1.02);
+}
+
+.cinematic-caption {
+  padding: var(--space-xl) 0 0;
+  max-width: 700px;
+}
+
+.cinematic-caption--light {
+  color: white;
+}
+
+.cinematic-caption--light .section-title {
+  color: white;
+}
+
+.cinematic-caption--light .section-eyebrow {
+  color: var(--color-accent-light);
+}
+
+.cinematic-caption--light .section-body {
+  color: rgba(255,255,255,0.6);
+}
+
+/* ============================================
    Feature Sections (Split Image/Text)
    ============================================ */
 
@@ -590,63 +727,6 @@ h4 {
 }
 
 /* ============================================
-   Full-Width Image Section
-   ============================================ */
-
-.fullwidth-image-section {
-  position: relative;
-  background: var(--color-bg);
-  padding: var(--space-3xl) 0 0;
-}
-
-.fullwidth-image-section--dark {
-  background: var(--color-bg-dark);
-}
-
-.fullwidth-image-wrap {
-  width: 100%;
-  max-width: var(--container-wide);
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.fullwidth-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-  display: block;
-  filter: brightness(1.03) contrast(1.02);
-  transition: transform 1.5s var(--ease-smooth);
-}
-
-.fullwidth-image-wrap:hover .fullwidth-img {
-  transform: scale(1.02);
-}
-
-.fullwidth-caption {
-  padding: var(--space-xl) var(--space-lg) var(--space-3xl);
-  max-width: 700px;
-}
-
-.fullwidth-caption--light {
-  color: white;
-}
-
-.fullwidth-caption--light .section-title {
-  color: white;
-}
-
-.fullwidth-caption--light .section-eyebrow {
-  color: var(--color-accent-light);
-}
-
-.fullwidth-caption--light .feature-description {
-  color: rgba(255,255,255,0.6);
-}
-
-/* ============================================
    Gallery Strip (Horizontal Scroll)
    ============================================ */
 
@@ -696,91 +776,131 @@ h4 {
 }
 
 /* ============================================
-   Product Offering
+   The Floating Cable System
    ============================================ */
 
-.offering {
+.system-section {
+  padding: var(--space-3xl) 0;
+  background: var(--color-bg-dark);
+}
+
+.system-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.system-content .section-eyebrow {
+  color: var(--color-accent-light);
+}
+
+.system-content .section-title {
+  color: white;
+  margin-bottom: var(--space-lg);
+}
+
+.system-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.system-list li {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  padding: 0.6em 0;
+  padding-left: 1.8em;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  line-height: 1.6;
+}
+
+.system-list li:last-child {
+  border-bottom: none;
+}
+
+.system-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: var(--color-accent);
+  transform: translateY(-50%);
+}
+
+.system-image {
+  overflow: hidden;
+}
+
+.system-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  filter: brightness(1.03) contrast(1.02);
+  transition: transform 1.2s var(--ease-smooth);
+}
+
+.system-image:hover .system-img {
+  transform: scale(1.03);
+}
+
+/* ============================================
+   Design Process (3-Step)
+   ============================================ */
+
+.process-section {
   padding: var(--space-3xl) 0;
   background: var(--color-bg);
 }
 
-.offering-grid {
+.process-grid {
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: var(--space-3xl);
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
 }
 
-.offering-features {
-  display: grid;
-  gap: var(--space-lg);
+.process-step {
+  text-align: left;
+  padding: var(--space-lg) 0;
+  position: relative;
 }
 
-.feature-item {
-  display: flex;
-  gap: var(--space-md);
-  align-items: flex-start;
-  padding: var(--space-md) 0;
-  border-bottom: 1px solid var(--color-border);
+.process-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background: var(--color-accent);
 }
 
-.feature-item:last-child {
-  border-bottom: none;
-}
-
-.feature-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent);
-}
-
-.feature-text h4 {
-  margin-bottom: 0.4em;
-  color: var(--color-text);
-}
-
-.feature-text p {
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  line-height: 1.7;
-}
-
-.capacity-card {
-  background: var(--color-bg-dark);
-  padding: var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-sm);
-  position: sticky;
-  top: 120px;
-}
-
-.capacity-label {
-  font-size: 0.7rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-accent-light);
-}
-
-.capacity-range {
+.process-number {
+  display: block;
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 200;
-  color: white;
-  letter-spacing: -0.03em;
+  color: var(--color-accent-light);
+  letter-spacing: -0.02em;
   line-height: 1;
+  margin-bottom: var(--space-md);
+  opacity: 0.5;
 }
 
-.capacity-note {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
+.process-step h3 {
+  margin-bottom: var(--space-sm);
+  font-weight: 400;
+}
+
+.process-step p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
 }
 
 /* ============================================
@@ -891,122 +1011,48 @@ h4 {
 }
 
 /* ============================================
-   Philosophy
+   Service Area
    ============================================ */
 
-.philosophy {
+.service-area {
   padding: var(--space-3xl) 0;
   background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
-.philosophy-inner {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: var(--space-3xl);
-  align-items: center;
+.area-inner {
+  text-align: center;
 }
 
-.philosophy-content .section-title {
-  margin-bottom: var(--space-lg);
-}
-
-.philosophy-text {
+.area-description {
   font-size: 1.05rem;
   color: var(--color-text-secondary);
-  line-height: 1.9;
-  margin-bottom: var(--space-md);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.philosophy-text:last-child {
-  margin-bottom: 0;
+.area-tags {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-lg);
 }
 
-.philosophy-image {
-  overflow: hidden;
-}
-
-.philosophy-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  filter: brightness(1.03) contrast(1.02);
-  transition: transform 1.2s var(--ease-smooth);
-}
-
-.philosophy-image:hover .philosophy-img {
-  transform: scale(1.03);
-}
-
-/* ============================================
-   Decision Support
-   ============================================ */
-
-.decision {
-  padding: var(--space-3xl) 0;
-  background: var(--color-bg-warm);
-}
-
-.decision-inner {
-  max-width: 900px;
-}
-
-.decision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-}
-
-.decision-card {
-  padding: var(--space-xl);
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-card);
-}
-
-.decision-card h4 {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-md);
-}
-
-.decision-card--ideal h4 {
-  color: var(--color-accent);
-}
-
-.decision-card--not h4 {
-  color: var(--color-text-muted);
-}
-
-.decision-card li {
-  font-size: 0.9rem;
+.area-tags span {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--color-text-secondary);
-  padding: 0.5em 0;
-  padding-left: 1.2em;
-  position: relative;
-  line-height: 1.6;
+  padding: 0.6em 1.4em;
+  border: 1px solid var(--color-border);
+  transition: all var(--duration-fast) var(--ease-smooth);
 }
 
-.decision-card--ideal li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.85em;
-  width: 5px;
-  height: 5px;
-  background: var(--color-accent);
-  border-radius: 50%;
-}
-
-.decision-card--not li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.85em;
-  width: 6px;
-  height: 1px;
-  background: var(--color-text-muted);
+.area-tags span:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 /* ============================================
@@ -1071,43 +1117,6 @@ h4 {
   font-size: 0.8rem;
   color: rgba(255,255,255,0.35);
   letter-spacing: 0.05em;
-}
-
-/* ============================================
-   Service Area
-   ============================================ */
-
-.service-area {
-  padding: var(--space-3xl) 0;
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
-}
-
-.area-inner {
-  text-align: center;
-}
-
-.area-tags {
-  display: flex;
-  gap: var(--space-sm);
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: var(--space-lg);
-}
-
-.area-tags span {
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--color-text-secondary);
-  padding: 0.6em 1.4em;
-  border: 1px solid var(--color-border);
-  transition: all var(--duration-fast) var(--ease-smooth);
-}
-
-.area-tags span:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
 }
 
 /* ============================================
@@ -1185,16 +1194,14 @@ h4 {
 }
 
 /* Stagger children */
+.value-grid [data-animate]:nth-child(2) { transition-delay: 0.1s; }
+.value-grid [data-animate]:nth-child(3) { transition-delay: 0.2s; }
+
 .pricing-grid [data-animate]:nth-child(2) { transition-delay: 0.1s; }
 .pricing-grid [data-animate]:nth-child(3) { transition-delay: 0.2s; }
 
-.offering-features [data-animate]:nth-child(2) { transition-delay: 0.05s; }
-.offering-features [data-animate]:nth-child(3) { transition-delay: 0.1s; }
-.offering-features [data-animate]:nth-child(4) { transition-delay: 0.15s; }
-.offering-features [data-animate]:nth-child(5) { transition-delay: 0.2s; }
-.offering-features [data-animate]:nth-child(6) { transition-delay: 0.25s; }
-
-.decision-grid [data-animate]:nth-child(2) { transition-delay: 0.1s; }
+.process-grid [data-animate]:nth-child(2) { transition-delay: 0.1s; }
+.process-grid [data-animate]:nth-child(3) { transition-delay: 0.2s; }
 
 /* Feature section text follows image */
 .feature-split .feature-text-wrap[data-animate] {
@@ -1220,22 +1227,27 @@ h4 {
     padding: 0 0 var(--space-lg);
   }
 
-  .offering-grid {
+  .value-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 480px;
+    margin: 0 auto;
   }
 
-  .capacity-card {
-    position: static;
-    max-width: 320px;
-  }
-
-  .philosophy-inner {
+  .system-inner {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
   }
 
-  .philosophy-img {
+  .system-img {
     aspect-ratio: 16 / 9;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 480px;
+    margin: 0 auto;
   }
 
   .gallery-scroll-item {
@@ -1246,7 +1258,8 @@ h4 {
     height: 260px;
   }
 
-  .fullwidth-img {
+  .lifestyle-img,
+  .cinematic-img {
     aspect-ratio: 16 / 9;
   }
 }
@@ -1301,10 +1314,6 @@ h4 {
     max-width: 500px;
   }
 
-  .decision-grid {
-    grid-template-columns: 1fr;
-  }
-
   .hero-actions {
     flex-direction: column;
     align-items: center;
@@ -1343,8 +1352,9 @@ h4 {
     height: 220px;
   }
 
-  .fullwidth-caption {
-    padding: var(--space-lg) var(--space-lg) var(--space-xl);
+  .lifestyle-caption,
+  .cinematic-caption {
+    padding: var(--space-lg) 0 0;
   }
 }
 
@@ -1365,8 +1375,8 @@ h4 {
     padding: var(--space-lg);
   }
 
-  .capacity-range {
-    font-size: 3rem;
+  .process-number {
+    font-size: 2.2rem;
   }
 
   .gallery-scroll-item {
@@ -1379,5 +1389,9 @@ h4 {
 
   .feature-img {
     aspect-ratio: 3 / 2;
+  }
+
+  .system-list li {
+    font-size: 0.9rem;
   }
 }
