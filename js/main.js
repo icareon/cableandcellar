@@ -4,6 +4,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Enable scroll animations only when JS is running (progressive enhancement).
+  // Without this class, [data-animate] elements are visible by default.
+  document.documentElement.classList.add('js-ready');
+
   // ---- Navigation Scroll Behavior ----
   const nav = document.getElementById('nav');
   const navToggle = document.getElementById('navToggle');
