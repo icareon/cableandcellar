@@ -1081,13 +1081,18 @@ h4 {
   letter-spacing: 0.05em;
 }
 
+.consultation-call {
+  margin-top: var(--space-xs);
+}
+
 .consultation-phone {
-  color: rgba(255,255,255,0.5);
+  color: var(--color-accent-light);
   transition: color var(--duration-fast);
+  font-weight: 400;
 }
 
 .consultation-phone:hover {
-  color: var(--color-accent-light);
+  color: white;
 }
 
 /* ============================================
