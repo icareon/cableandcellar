@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 <body>
 
@@ -24,6 +24,7 @@
         <a href="#installations">Installations</a>
         <a href="#system">The System</a>
         <a href="#process">Design Process</a>
+        <a href="#about">About</a>
         <a href="#consultation" class="nav-cta">Consultation</a>
       </div>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">
@@ -230,6 +231,26 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container-wide">
+      <div class="about-inner">
+        <div class="about-image-wrap" data-animate>
+          <img src="images/IMG_1141.jpeg" alt="Founder of Cable &amp; Cellar" class="about-img">
+        </div>
+        <div class="about-content" data-animate>
+          <p class="section-eyebrow">About the Founder</p>
+          <h2 class="section-title">Rooted in the Bay.<br>Built on Precision.</h2>
+          <p class="about-bio">I'm a Monte Sereno-based engineer with a lifelong passion for design and architecture. For years I've been drawn to the intersection of craft and beauty — the way a well-considered space transforms how you feel inside it. I founded Cable &amp; Cellar to bring that sensibility to something I care about deeply: wine displayed not as storage, but as architecture. Every installation I design is built with the rigor of an engineer and the eye of someone who believes the details are everything.</p>
+          <div class="about-contact">
+            <a href="tel:+14088774537" class="about-phone">+1 (408) 877-4537</a>
+            <a href="#consultation" class="btn btn-ghost">Start a conversation <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONSULTATION CTA -->
   <section class="consultation" id="consultation">
     <div class="consultation-bg">
@@ -241,8 +262,17 @@
         <p class="section-eyebrow">Start Your Project</p>
         <h2 class="section-title">Design Your<br>Wine Gallery</h2>
         <p class="consultation-text">Schedule a consultation to explore how a floating wine display can be integrated into your home.</p>
-        <a href="mailto:hello@cableandcellar.com" class="btn btn-primary btn-large">Request a Consultation</a>
-        <p class="consultation-note">Complimentary design consultation &middot; Bay Area service area</p>
+        <!-- Contact form — to activate email delivery, sign up at formspree.io and replace YOUR_FORM_ID below -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+          </div>
+          <input type="tel" name="phone" placeholder="Phone Number (optional)">
+          <textarea name="message" placeholder="Tell us about your space — size, location, vision..." rows="3"></textarea>
+          <button type="submit" class="btn btn-primary btn-large">Request a Consultation</button>
+        </form>
+        <p class="consultation-note">Complimentary design consultation &middot; Bay Area service area &middot; <a href="tel:+14088774537" class="consultation-phone">+1 (408) 877-4537</a></p>
       </div>
     </div>
   </section>
@@ -259,6 +289,7 @@
           <a href="#installations">Installations</a>
           <a href="#system">The System</a>
           <a href="#process">Design Process</a>
+          <a href="#about">About</a>
           <a href="#consultation">Consultation</a>
         </div>
         <div class="footer-copy">
