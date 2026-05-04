@@ -128,4 +128,48 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryScroll.style.cursor = 'grab';
   }
 
+  // ---- Contact Form AJAX Submission ----
+  // Submits via fetch so the page never redirects away.
+  // Formsubmit.co sends the autoresponse confirmation to the submitter's email.
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          contactForm.innerHTML = `
+            <div class="form-success">
+              <div class="form-success-check">✓</div>
+              <p class="form-success-title">Message received.</p>
+              <p class="form-success-body">We'll be in touch within 48 hours. A confirmation has been sent to your email.</p>
+            </div>
+          `;
+        } else {
+          throw new Error('submit failed');
+        }
+      } catch {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        let errEl = contactForm.querySelector('.form-error');
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.className = 'form-error';
+          btn.insertAdjacentElement('afterend', errEl);
+        }
+        errEl.textContent = 'Something went wrong — please try again or call +1 (408) 877-4537.';
+      }
+    });
+  }
+
 });

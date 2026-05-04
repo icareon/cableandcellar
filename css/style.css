@@ -1219,6 +1219,44 @@ h4 {
   margin-top: var(--space-xs);
 }
 
+/* Form success state */
+.form-success {
+  padding: var(--space-xl) 0;
+  text-align: center;
+  color: white;
+}
+
+.form-success-check {
+  font-size: 2rem;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+  line-height: 1;
+}
+
+.form-success-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.01em;
+}
+
+.form-success-body {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+}
+
+/* Form error message */
+.form-error {
+  font-size: 0.82rem;
+  color: #e8a87c;
+  margin-top: var(--space-sm);
+  text-align: center;
+  line-height: 1.6;
+}
+
 /* ============================================
    Footer
    ============================================ */
