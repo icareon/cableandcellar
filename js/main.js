@@ -128,9 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryScroll.style.cursor = 'grab';
   }
 
-  // ---- Contact Form AJAX Submission ----
-  // Submits via fetch so the page never redirects away.
-  // Formsubmit.co sends the autoresponse confirmation to the submitter's email.
+  // ---- Contact Form Submission ----
+  // Posts to the Cloudflare Worker which sends both branded emails via Resend.
+  // See workers/form-handler.js for full setup instructions (takes ~10 min).
+  // Once your Worker is deployed, replace the URL below with your Worker URL.
+  const WORKER_URL = 'https://YOUR_WORKER.workers.dev'; // ← replace after deploying
+
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
@@ -141,22 +144,22 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.disabled = true;
 
       try {
-        const response = await fetch(contactForm.action, {
+        const response = await fetch(WORKER_URL, {
           method: 'POST',
           body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
         });
 
-        if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
           contactForm.innerHTML = `
             <div class="form-success">
               <div class="form-success-check">✓</div>
               <p class="form-success-title">Message received.</p>
-              <p class="form-success-body">We'll be in touch within 48 hours. A confirmation has been sent to your email.</p>
+              <p class="form-success-body">We’ll be in touch within 48 hours. A confirmation has been sent to your email.</p>
             </div>
           `;
         } else {
-          throw new Error('submit failed');
+          throw new Error(result.error || 'submit failed');
         }
       } catch {
         btn.textContent = originalText;
@@ -167,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
           errEl.className = 'form-error';
           btn.insertAdjacentElement('afterend', errEl);
         }
-        errEl.textContent = 'Something went wrong — please try again or call +1 (408) 877-4537.';
+        errEl.textContent = 'Something went wrong — please try again or call +1 (408) 877-4537.';
       }
     });
   }
