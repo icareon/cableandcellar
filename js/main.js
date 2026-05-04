@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Posts to the Cloudflare Worker which sends both branded emails via Resend.
   // See workers/form-handler.js for full setup instructions (takes ~10 min).
   // Once your Worker is deployed, replace the URL below with your Worker URL.
-  const WORKER_URL = 'https://YOUR_WORKER.workers.dev'; // ← replace after deploying
+  const WORKER_URL = 'https://royal-wood-85f1.massif-leery2i.workers.dev/';
 
   const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
